@@ -371,8 +371,9 @@ class BackendTester:
             "location": "Nowhere",
             "salary": "$0",
             "description": "This job should not be created by a candidate",
-            "employment_type": "full_time",
-            "requirements": ["Should fail"]
+            "requirements": "Should fail - candidates cannot post jobs",
+            "employment_type": "Full-time",
+            "skills_required": ["Should", "Fail"]
         }
         
         headers = {
