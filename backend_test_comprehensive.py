@@ -284,8 +284,9 @@ class BackendTester:
             "location": "San Francisco, CA",
             "salary": "$120,000 - $150,000",
             "description": f"We are looking for a senior software engineer to join our team. Job ID: {unique_id}",
-            "employment_type": "full_time",
-            "requirements": ["5+ years experience", "Python", "FastAPI", "React"]
+            "requirements": "5+ years experience with Python, FastAPI, and React. Strong problem-solving skills required.",
+            "employment_type": "Full-time",
+            "skills_required": ["Python", "FastAPI", "React", "JavaScript"]
         }
         
         headers = {
