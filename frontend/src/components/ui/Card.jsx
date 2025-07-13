@@ -13,14 +13,14 @@ const Card = React.forwardRef(
         "bg-white/80 backdrop-blur-xl border-gray-200/50 shadow-lg shadow-gray-900/5",
         // Dark mode
         "dark:bg-gray-900/80 dark:backdrop-blur-xl dark:border-gray-700/50 dark:shadow-2xl dark:shadow-black/20",
-        // Neumorphism effect
-        "before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-r before:from-white/20 before:to-transparent before:opacity-40",
+        // Neumorphism effect - with pointer-events-none to allow input interaction
+        "before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-r before:from-white/20 before:to-transparent before:opacity-40 before:pointer-events-none",
         "dark:before:from-white/5 dark:before:to-transparent",
         // Hover effect
         hover &&
           "hover:shadow-xl hover:shadow-gray-900/10 hover:scale-[1.02] dark:hover:shadow-black/30",
-        // Inner glow
-        "after:absolute after:inset-0 after:rounded-2xl after:bg-gradient-to-t after:from-transparent after:to-white/10 after:opacity-30",
+        // Inner glow - with pointer-events-none to allow input interaction
+        "after:absolute after:inset-0 after:rounded-2xl after:bg-gradient-to-t after:from-transparent after:to-white/10 after:opacity-30 after:pointer-events-none",
         "dark:after:from-transparent dark:after:to-white/5",
         className
       )}
@@ -38,7 +38,7 @@ Card.displayName = "Card";
 const CardHeader = React.forwardRef(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("flex flex-col space-y-1.5 p-6 pb-4", className)}
+    className={cn("flex flex-col space-y-1.5 p-6 pb-4 relative z-10", className)}
     {...props}
   />
 ));
@@ -67,14 +67,14 @@ const CardDescription = React.forwardRef(({ className, ...props }, ref) => (
 CardDescription.displayName = "CardDescription";
 
 const CardContent = React.forwardRef(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("p-6 pt-4", className)} {...props} />
+  <div ref={ref} className={cn("p-6 pt-4 relative z-10", className)} {...props} />
 ));
 CardContent.displayName = "CardContent";
 
 const CardFooter = React.forwardRef(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("flex items-center p-6 pt-4", className)}
+    className={cn("flex items-center p-6 pt-4 relative z-10", className)}
     {...props}
   />
 ));
