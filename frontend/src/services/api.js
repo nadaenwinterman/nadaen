@@ -8,7 +8,7 @@ const API = axios.create({
 // Optional: Add interceptors for tokens
 API.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem("access_token");
+    const token = localStorage.getItem("token"); // Changed from "access_token" to "token" to match AuthContext
     if (token) config.headers.Authorization = `Bearer ${token}`;
     return config;
   },
