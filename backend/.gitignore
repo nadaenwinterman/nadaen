@@ -1,0 +1,23 @@
+# Ignore Python cache and bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Ignore virtual environments
+venv/
+env/
+ENV/
+
+# Ignore local environment variables
+.env
+.env.*
+# VSCode or JetBrains IDEs
+.vscode/
+.idea/
+
+# Log files
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
